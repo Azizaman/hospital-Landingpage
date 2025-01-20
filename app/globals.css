@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Shiny Text Effect */
+.text-shiny {
+  background: linear-gradient(
+    to right bottom,
+    rgb(255, 255, 255) 30%,
+    rgba(255, 255, 255, 0.38)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+/* Golden Spotlight */
+.spotlight-golden {
+  background: radial-gradient(
+    1200px circle at var(--mouse-x) var(--mouse-y),
+    rgba(189, 163, 19, 0.508),
+    transparent -40%
+  );
+}
+
+.spotlight-1 {
+  background: radial-gradient(
+    600px circle at 0% 0%,
+    rgba(255, 255, 255, 0.1),
+    transparent 40%
+  );
+  animation: moveSpotlight1 15s infinite;
+}
+
+.spotlight-2 {
+  background: radial-gradient(
+    800px circle at 100% 100%,
+    rgba(255, 215, 0, 0.15),
+    transparent 40%
+  );
+  animation: moveSpotlight2 20s infinite;
+}
+
+.spotlight-3 {
+  background: radial-gradient(
+    700px circle at 50% 50%,
+    rgba(255, 255, 255, 0.1),
+    transparent 40%
+  );
+  animation: moveSpotlight3 25s infinite;
+}
+
+@keyframes moveSpotlight1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50%, 20%);
+  }
+  50% {
+    transform: translate(100%, 50%);
+  }
+  75% {
+    transform: translate(20%, 100%);
+  }
+}
+
+@keyframes moveSpotlight2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-30%, -20%);
+  }
+  50% {
+    transform: translate(-60%, -40%);
+  }
+  75% {
+    transform: translate(-20%, -60%);
+  }
+}
+
+@keyframes moveSpotlight3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30%, -30%) scale(1.5);
+  }
+}
+
+.hero-glow {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 0, 0.15) 0%,
+    rgba(255, 215, 0, 0.05) 25%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  animation: rotateGlow 30s linear infinite;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Card Hover Effects */
+.fancy-card {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.fancy-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 215, 0, 0.1),
+    transparent
+  );
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  border-radius: inherit;
+}
+
+.fancy-card:hover::before {
+  opacity: 1;
+}
+
+/* Floating Animation */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Pulse Animation */
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Gradient Border */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 215, 0, 0.1)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 215, 0, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  z-index: -1;
+  border-radius: inherit;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* Shimmer Effect */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

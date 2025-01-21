@@ -75,9 +75,10 @@
 .spotlight-golden {
   background: radial-gradient(
     1200px circle at var(--mouse-x) var(--mouse-y),
-    rgba(189, 163, 19, 0.508),
-    transparent -40%
+    rgba(189, 163, 19, 0.8), /* Increased opacity from 0.508 to 0.8 */
+    transparent 80% /* Reduced the spread area for better visibility */
   );
+  mix-blend-mode: screen; /* Ensures it blends well with the background */
 }
 
 .spotlight-1 {
@@ -174,11 +175,7 @@
 /* Card Hover Effects */
 .fancy-card {
   position: relative;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
+  background: black;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
@@ -187,12 +184,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 215, 0, 0.1),
-    transparent
-  );
+  background: black;
+  
   transition: opacity 0.3s ease;
   opacity: 0;
   border-radius: inherit;

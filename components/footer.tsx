@@ -77,6 +77,8 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-muted-foreground">
+          <p>Developed By Abdul Aziz Aman</p>
+          <p>Contact Developer : 8600073906</p>
           <p>© 2024 MediCare Plus. All rights reserved.</p>
         </div>
       </div>

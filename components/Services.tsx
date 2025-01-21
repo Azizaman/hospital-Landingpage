@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -35,24 +35,24 @@ const Services = () => {
       title: "Detox Therapy",
       description: "24/7 medicine availability",
       image: detoxtherapy,
-      hoverGif: "https://i.giphy.com/media/syEfLvksYQnmM/giphy.gif",
+      
     },
     {
       title: "Advance Care Senior For Citizens",
       description: "Round-the-clock emergency services",
       image: oldagetherapy,
-      hoverGif: "https://i.giphy.com/media/syEfLvksYQnmM/giphy.gif",
+      
     },
     {
       title: "Family Care",
       description: "Complete healthcare for your family",
       image: familytherapy,
-      hoverGif: "https://i.giphy.com/media/syEfLvksYQnmM/giphy.gif",
+      
     },
   ];
 
   return (
-    <section className="py-32 bg-black items-center">
+    <section className="py-32 bg-neutral-900 items-center">
       <div className="container mx-auto px-4 lg:px-32">
         <h2 className="text-shiny text-4xl font-bold text-center mb-16">Our Services</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center ml-12 md:mr-4">

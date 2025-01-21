@@ -9,6 +9,7 @@ import Services from "@/components/Services";
 import Stats from "@/components/Stats";
 import { CardDemo } from "@/components/CardAnimation";
 import DoctorsTeam from "@/components/Doctors";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -44,6 +45,8 @@ export default function Home() {
       <Services/>
 
       <DoctorsTeam/>
+
+      <Contact/>
 
       {/* Stats Section */}
       <Stats/>

@@ -114,7 +114,7 @@ export default function DoctorsTeam() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold text-neutral-100 mb-2">
-                Dr. Abdul Rehman Durvesh
+                Dr. Rehan  Durvesh
               </h3>
               <p className="text-neutral-400 mb-3">Senior Unani Practitioner</p>
               <p className="text-neutral-300 mb-4">

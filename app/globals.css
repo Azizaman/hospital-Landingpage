@@ -88,21 +88,10 @@
 .spotlight-green {
   position: relative;
   background: radial-gradient(
-      1200px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(34, 197, 94, 0.5), /* Herbal green spotlight */
-      transparent 80%
-    ),
-    radial-gradient(
-      1400px circle at 50% 30%,
-      rgba(255, 255, 255, 0.05), /* Subtle white light */
-      transparent 80%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.9)
-    );
+    1200px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(34, 197, 94, 0.4), /* Herbal green spotlight */
+    transparent 80%
+  );
   mix-blend-mode: screen;
   transition: background-position 0.3s ease-out;
 }
